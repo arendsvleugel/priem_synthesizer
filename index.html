@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<!-- saved from url=(0122)file:///C:/Users/verbekbc/OneDrive%20-%20Vlaamse%20overheid%20-%20Office%20365/Bureaublad/mag%20weg/priem_synthesizer.html -->
+<html lang="nl" class="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Priem-Synthesizer — 10-Priemvenster &amp; Boventoon-Aftrekking</title>
+  <script src="./index_files/saved_resource"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./index_files/css2" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'monospace']
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    /* Strakke engineering-stijl en fijne scrollbars / sliders */
+    body {
+      background-color: #090d16;
+      color: #e2e8f0;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    .font-mono-tabular {
+      font-family: 'JetBrains Mono', monospace;
+      font-variant-numeric: tabular-nums;
+    }
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      background: transparent;
+      cursor: pointer;
+    }
+    input[type="range"]::-webkit-slider-runnable-track {
+      height: 6px;
+      border-radius: 9999px;
+      background: #1e293b;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 14px;
+      height: 14px;
+      border-radius: 9999px;
+      background: #38bdf8;
+      border: 2px solid #0f172a;
+      margin-top: -4px;
+      transition: transform 0.1s ease, background-color 0.15s ease;
+    }
+    input[type="range"]::-webkit-slider-thumb:hover {
+      background: #7dd3fc;
+      transform: scale(1.12);
+    }
+    input[type="range"].phase-slider::-webkit-slider-thumb {
+      background: #a78bfa;
+    }
+    input[type="range"].phase-slider::-webkit-slider-thumb:hover {
+      background: #c4b5fd;
+    }
+  </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Inter, system-ui, sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:JetBrains Mono, ui-monospace, SFMono-Regular, monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.mx-auto{margin-left:auto;margin-right:auto}.mb-1\.5{margin-bottom:0.375rem}.mb-2{margin-bottom:0.5rem}.ml-0\.5{margin-left:0.125rem}.mr-1{margin-right:0.25rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.mt-3{margin-top:0.75rem}.mt-3\.5{margin-top:0.875rem}.mb-0\.5{margin-bottom:0.125rem}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-44{height:11rem}.h-full{height:100%}.min-h-screen{min-height:100vh}.w-full{width:100%}.max-w-7xl{max-width:80rem}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-2\.5{gap:0.625rem}.gap-3{gap:0.75rem}.gap-3\.5{gap:0.875rem}.space-y-3\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.875rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.875rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.rounded-xl{border-radius:0.75rem}.rounded{border-radius:0.25rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-emerald-500\/40{border-color:rgb(16 185 129 / 0.4)}.border-sky-500\/30{border-color:rgb(14 165 233 / 0.3)}.border-sky-500\/40{border-color:rgb(14 165 233 / 0.4)}.border-slate-700{--tw-border-opacity:1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.border-slate-800{--tw-border-opacity:1;border-color:rgb(30 41 59 / var(--tw-border-opacity, 1))}.border-slate-800\/80{border-color:rgb(30 41 59 / 0.8)}.border-slate-800\/90{border-color:rgb(30 41 59 / 0.9)}.bg-emerald-500\/20{background-color:rgb(16 185 129 / 0.2)}.bg-sky-500{--tw-bg-opacity:1;background-color:rgb(14 165 233 / var(--tw-bg-opacity, 1))}.bg-sky-500\/15{background-color:rgb(14 165 233 / 0.15)}.bg-sky-500\/20{background-color:rgb(14 165 233 / 0.2)}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.bg-slate-900\/90{background-color:rgb(15 23 42 / 0.9)}.bg-slate-950{--tw-bg-opacity:1;background-color:rgb(2 6 23 / var(--tw-bg-opacity, 1))}.bg-slate-950\/70{background-color:rgb(2 6 23 / 0.7)}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-slate-950\/80{background-color:rgb(2 6 23 / 0.8)}.p-3\.5{padding:0.875rem}.p-3{padding:0.75rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-3\.5{padding-left:0.875rem;padding-right:0.875rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-1\.5{padding-left:0.375rem;padding-right:0.375rem}.pb-3{padding-bottom:0.75rem}.pt-3\.5{padding-top:0.875rem}.text-\[11px\]{font-size:11px}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-medium{font-weight:500}.font-semibold{font-weight:600}.tracking-tight{letter-spacing:-0.025em}.text-amber-300{--tw-text-opacity:1;color:rgb(252 211 77 / var(--tw-text-opacity, 1))}.text-emerald-300{--tw-text-opacity:1;color:rgb(110 231 183 / var(--tw-text-opacity, 1))}.text-sky-200{--tw-text-opacity:1;color:rgb(186 230 253 / var(--tw-text-opacity, 1))}.text-sky-300{--tw-text-opacity:1;color:rgb(125 211 252 / var(--tw-text-opacity, 1))}.text-slate-100{--tw-text-opacity:1;color:rgb(241 245 249 / var(--tw-text-opacity, 1))}.text-slate-200{--tw-text-opacity:1;color:rgb(226 232 240 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-950{--tw-text-opacity:1;color:rgb(2 6 23 / var(--tw-text-opacity, 1))}.text-violet-300{--tw-text-opacity:1;color:rgb(196 181 253 / var(--tw-text-opacity, 1))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-75{opacity:0.75}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.selection\:bg-sky-500\/30 *::selection{background-color:rgb(14 165 233 / 0.3)}.selection\:text-sky-200 *::selection{--tw-text-opacity:1;color:rgb(186 230 253 / var(--tw-text-opacity, 1))}.selection\:bg-sky-500\/30::selection{background-color:rgb(14 165 233 / 0.3)}.selection\:text-sky-200::selection{--tw-text-opacity:1;color:rgb(186 230 253 / var(--tw-text-opacity, 1))}.hover\:bg-emerald-500\/30:hover{background-color:rgb(16 185 129 / 0.3)}.hover\:bg-sky-400:hover{--tw-bg-opacity:1;background-color:rgb(56 189 248 / var(--tw-bg-opacity, 1))}.hover\:bg-sky-500\/30:hover{background-color:rgb(14 165 233 / 0.3)}.hover\:bg-slate-700:hover{--tw-bg-opacity:1;background-color:rgb(51 65 85 / var(--tw-bg-opacity, 1))}.hover\:text-slate-200:hover{--tw-text-opacity:1;color:rgb(226 232 240 / var(--tw-text-opacity, 1))}@media (min-width: 640px){.sm\:h-48{height:12rem}.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.sm\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.sm\:flex-row{flex-direction:row}.sm\:items-center{align-items:center}.sm\:justify-between{justify-content:space-between}.sm\:p-4{padding:1rem}.sm\:px-5{padding-left:1.25rem;padding-right:1.25rem}.sm\:text-xl{font-size:1.25rem;line-height:1.75rem}}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:col-span-12{grid-column:span 12 / span 12}.lg\:col-span-6{grid-column:span 6 / span 6}.lg\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.lg\:grid-cols-6{grid-template-columns:repeat(6, minmax(0, 1fr))}.lg\:flex-row{flex-direction:row}.lg\:items-center{align-items:center}.lg\:justify-between{justify-content:space-between}}@media (min-width: 1280px){.xl\:grid-cols-6{grid-template-columns:repeat(6, minmax(0, 1fr))}}</style></head>
+<body class="min-h-screen antialiased selection:bg-sky-500/30 selection:text-sky-200">
+  <div id="app" class="max-w-7xl mx-auto px-3 sm:px-5 py-4 space-y-4">
+    <!-- Bovenbalk: Titel, Status en Transport -->
+    <header class="bg-slate-900/90 border border-slate-800 rounded-xl p-3.5 sm:p-4 shadow-lg">
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+        <div>
+          <div class="flex items-center gap-2.5 flex-wrap">
+            <h1 class="text-lg sm:text-xl font-semibold tracking-tight text-slate-100">
+              Priem-Synthesizer
+            </h1>
+            <span class="text-xs font-mono-tabular px-2 py-0.5 rounded-md bg-sky-500/15 text-sky-300 border border-sky-500/30">
+              10-Priemvenster • Dual A/B
+            </span>
+            <span id="audio-status-badge" class="text-xs font-mono-tabular px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700">Audio: Gestopt</span>
+          </div>
+          <p class="text-xs text-slate-400 mt-1">
+            Schuivend venster van 10 priemgetallen, interpriemafstand (Δt) timing, boventoon-aftrekking m = max(1, |p_laatste − p|) en grondtoon rond anker (~2 octaven gem.).
+          </p>
+        </div>
+
+        <!-- Transportknoppen -->
+        <div class="flex flex-wrap items-center gap-2">
+          <button id="btn-play-stop" type="button" class="px-3.5 py-2 rounded-lg text-sm font-medium bg-sky-500 hover:bg-sky-400 text-slate-950 transition flex items-center gap-1.5 shadow-sm">
+            <span id="play-icon">▶</span>
+            <span id="play-label">Start</span>
+            <span class="text-[11px] font-mono-tabular opacity-75 ml-0.5">[Spatie]</span>
+          </button>
+
+          <button id="btn-next-step" type="button" class="px-3 py-2 rounded-lg text-sm font-medium bg-slate-800 hover:bg-slate-700 text-slate-100 border border-slate-700 transition">
+            Volgende stap
+          </button>
+
+          <button id="btn-reset" type="button" class="px-3 py-2 rounded-lg text-sm font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+            Reset #1
+          </button>
+
+          <button id="btn-loop" type="button" aria-pressed="true" class="px-3 py-2 rounded-lg text-sm font-medium bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 hover:bg-emerald-500/30 transition">Loop: Aan</button>
+        </div>
+      </div>
+
+      <!-- Kernmetrieken strip -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-2.5 mt-3.5 pt-3.5 border-t border-slate-800/80 text-xs">
+        <div class="bg-slate-950/70 border border-slate-800/90 rounded-lg px-3 py-2">
+          <div class="text-slate-400">Stap / Venster</div>
+          <div id="metric-step" class="font-mono-tabular text-sm font-semibold text-slate-100 mt-0.5">#1 / 491</div>
+        </div>
+        <div class="bg-slate-950/70 border border-slate-800/90 rounded-lg px-3 py-2">
+          <div class="text-slate-400">Actieve Gap (p_{n+1}−p_n)</div>
+          <div id="metric-gap" class="font-mono-tabular text-sm font-semibold text-amber-300 mt-0.5">2 (31 − 29)</div>
+        </div>
+        <div class="bg-slate-950/70 border border-slate-800/90 rounded-lg px-3 py-2">
+          <div class="text-slate-400">Volgende Stap Over</div>
+          <div id="metric-next-interval" class="font-mono-tabular text-sm font-semibold text-sky-300 mt-0.5">0.500 s</div>
+        </div>
+        <div class="bg-slate-950/70 border border-slate-800/90 rounded-lg px-3 py-2">
+          <div class="text-slate-400">Laatste Priem p_laatste</div>
+          <div id="metric-plast" class="font-mono-tabular text-sm font-semibold text-violet-300 mt-0.5">29</div>
+        </div>
+        <div class="bg-slate-950/70 border border-slate-800/90 rounded-lg px-3 py-2">
+          <div class="text-slate-400">Grondtoon f0</div>
+          <div id="metric-f0" class="font-mono-tabular text-sm font-semibold text-emerald-300 mt-0.5">106.0 Hz</div>
+        </div>
+        <div class="bg-slate-950/70 border border-slate-800/90 rounded-lg px-3 py-2">
+          <div class="text-slate-400">Actieve Stem (A/B)</div>
+          <div id="metric-active-voice" class="font-mono-tabular text-sm font-semibold text-slate-100 mt-0.5">Voice A</div>
+        </div>
+      </div>
+
+      <!-- Meldingenkader (vervangt alert/confirm) -->
+      <div id="status-banner" class="hidden mt-3 px-3 py-2 rounded-lg text-xs font-mono-tabular border"></div>
+    </header>
+
+    <!-- Timing, Ankerfrequentie & Glide Regelaars -->
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3.5">
+      <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-3.5">
+        <div class="flex items-center justify-between text-xs mb-1.5">
+          <label for="slider-dt" class="font-medium text-slate-300">Tijdseenheid Δt</label>
+          <span id="val-dt" class="font-mono-tabular text-sky-300 font-semibold">0.25 s</span>
+        </div>
+        <input id="slider-dt" type="range" min="0.05" max="1.50" step="0.01" value="0.25" class="w-full">
+        <div class="flex justify-between text-[11px] font-mono-tabular text-slate-500 mt-1">
+          <span>0.05 s</span>
+          <span>Δt × (p_{n+1}−p_n)</span>
+          <span>1.50 s</span>
+        </div>
+      </div>
+
+      <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-3.5">
+        <div class="flex items-center justify-between text-xs mb-1.5">
+          <label for="slider-anchor" class="font-medium text-slate-300">Ankerfrequentie</label>
+          <span id="val-anchor" class="font-mono-tabular text-emerald-300 font-semibold">220 Hz</span>
+        </div>
+        <input id="slider-anchor" type="range" min="55" max="880" step="1" value="220" class="w-full">
+        <div class="flex justify-between text-[11px] font-mono-tabular text-slate-500 mt-1">
+          <span>55 Hz</span>
+          <span>~2 octaven gem. bereik</span>
+          <span>880 Hz</span>
+        </div>
+      </div>
+
+      <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-3.5">
+        <div class="flex items-center justify-between text-xs mb-1.5">
+          <label for="slider-glide" class="font-medium text-slate-300">Glide / Morph</label>
+          <span id="val-glide" class="font-mono-tabular text-violet-300 font-semibold">45%</span>
+        </div>
+        <input id="slider-glide" type="range" min="0" max="100" step="1" value="45" class="w-full phase-slider">
+        <div class="flex justify-between text-[11px] font-mono-tabular text-slate-500 mt-1">
+          <span>0% (strak)</span>
+          <span>f0 &amp; A/B crossfade</span>
+          <span>100% (vloeiend)</span>
+        </div>
+      </div>
+
+      <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-3.5">
+        <div class="flex items-center justify-between text-xs mb-1.5">
+          <label for="slider-master" class="font-medium text-slate-300">Master Volume</label>
+          <span id="val-master" class="font-mono-tabular text-amber-300 font-semibold">35%</span>
+        </div>
+        <input id="slider-master" type="range" min="0" max="100" step="1" value="35" class="w-full">
+        <div class="flex justify-between text-[11px] font-mono-tabular text-slate-500 mt-1">
+          <span>0%</span>
+          <span>Limiter / Gain</span>
+          <span>100%</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visualisaties op HTML5 Canvas -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-3.5">
+      <!-- Canvas 1: Schuivende Tijdlijn -->
+      <div class="lg:col-span-12 bg-slate-900/90 border border-slate-800 rounded-xl p-3.5">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
+          <div class="flex items-center gap-2">
+            <h2 class="text-sm font-semibold text-slate-200">1. Schuivende 10-Priem Tijdlijn</h2>
+            <span class="text-xs font-mono-tabular text-slate-400">Priemen, gaps, m = max(1, |p_laatste − p|) &amp; frequenties</span>
+          </div>
+          <div id="timeline-summary" class="text-xs font-mono-tabular text-sky-300">Venster: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29] • f0 = 106.0 Hz</div>
+        </div>
+        <div class="w-full h-44 sm:h-48 rounded-lg overflow-hidden bg-slate-950 border border-slate-800/90">
+          <canvas id="canvas-timeline" class="w-full h-full block" width="1511" height="238"></canvas>
+        </div>
+      </div>
+
+      <!-- Canvas 2: Oscilloscoop -->
+      <div class="lg:col-span-6 bg-slate-900/90 border border-slate-800 rounded-xl p-3.5">
+        <div class="flex items-center justify-between gap-2 mb-2">
+          <h2 class="text-sm font-semibold text-slate-200">2. Oscilloscoop (Tijddomein)</h2>
+          <div class="flex items-center gap-3 text-xs font-mono-tabular">
+            <span class="text-sky-300">Piek: <strong id="scope-peak">0.000</strong></span>
+            <span class="text-amber-300">Crest: <strong id="scope-crest">1.00×</strong></span>
+          </div>
+        </div>
+        <div class="w-full h-44 rounded-lg overflow-hidden bg-slate-950 border border-slate-800/90">
+          <canvas id="canvas-scope" class="w-full h-full block" width="727" height="218"></canvas>
+        </div>
+      </div>
+
+      <!-- Canvas 3: Frequentiespectrum (FFT) -->
+      <div class="lg:col-span-6 bg-slate-900/90 border border-slate-800 rounded-xl p-3.5">
+        <div class="flex items-center justify-between gap-2 mb-2">
+          <h2 class="text-sm font-semibold text-slate-200">3. Frequentiespectrum (FFT)</h2>
+          <div class="text-xs font-mono-tabular text-slate-400">
+            0 Hz – <span id="fft-nyquist">24.0 kHz</span>
+          </div>
+        </div>
+        <div class="w-full h-44 rounded-lg overflow-hidden bg-slate-950 border border-slate-800/90">
+          <canvas id="canvas-fft" class="w-full h-full block" width="727" height="218"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Presets & Per-Stem Regelaars (Grondtoon + 10 Priemboventonen) -->
+    <section class="bg-slate-900/90 border border-slate-800 rounded-xl p-3.5 sm:p-4 space-y-3.5">
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 pb-3 border-b border-slate-800">
+        <div>
+          <h2 class="text-sm font-semibold text-slate-100">
+            Boventoon-Aftrekking &amp; Stemregelaars (Grondtoon f0 + 10 Priemboventonen)
+          </h2>
+          <p class="text-xs text-slate-400 mt-0.5">
+            Elke priem p in het actieve venster levert boventoon-orde <span class="font-mono-tabular text-slate-300">m = max(1, |p_laatste − p|)</span>. Pas amplitude, fase (0°–360°), Mute (M) of Solo (S) live aan.
+          </p>
+        </div>
+
+        <!-- Presets -->
+        <div class="flex flex-wrap items-center gap-1.5">
+          <span class="text-xs text-slate-400 mr-1">Presets:</span>
+          <button type="button" data-preset="natural" class="preset-btn px-2.5 py-1.5 rounded-lg text-xs font-medium bg-sky-500/20 text-sky-200 border border-sky-500/40 hover:bg-sky-500/30 transition">
+            Natuurlijk verval (1/p)
+          </button>
+          <button type="button" data-preset="equal-energy" class="preset-btn px-2.5 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700 hover:bg-slate-700 transition">
+            Gelijke energie (1/√p)
+          </button>
+          <button type="button" data-preset="equal-amp" class="preset-btn px-2.5 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700 hover:bg-slate-700 transition">
+            Gelijke amplitude
+          </button>
+          <button type="button" data-preset="primes-only" class="preset-btn px-2.5 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700 hover:bg-slate-700 transition">
+            Alleen priems
+          </button>
+        </div>
+      </div>
+
+      <!-- 11 Stemmen (Index 0 = f0 grondtoon, Index 1..10 = 10 priemen in venster) -->
+      <div id="voices-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-2.5"><div class="bg-slate-950/80 border border-slate-800 rounded-xl p-3 flex flex-col justify-between gap-2.5">
+            <div class="flex items-start justify-between gap-1">
+              <div>
+                <div class="text-xs font-semibold text-emerald-300">Grondtoon (f0)</div>
+                <div class="text-[11px] font-mono-tabular text-slate-400 mt-0.5">1× f0 • 106.0 Hz</div>
+              </div>
+              <div class="flex items-center gap-1">
+                <button type="button" data-action="mute" data-idx="0" title="Mute (M)" class="px-1.5 py-0.5 rounded text-[11px] font-mono-tabular border transition bg-slate-900 text-slate-400 border-slate-700 hover:text-slate-200">M</button>
+                <button type="button" data-action="solo" data-idx="0" title="Solo (S)" class="px-1.5 py-0.5 rounded text-[11px] font-mono-tabular border transition bg-slate-900 text-slate-400 border-slate-700 hover:text-slate-200">S</button>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <div>
+                <div class="flex justify-between text-[11px] font-mono-tabular mb-0.5">
+                  <span class="text-slate-400">Amp</span>
+                  <span class="text-sky-300">85%</span>
+                </div>
+                <input type="range" data-action="amp" data-idx="0" min="0" max="1" step="0.01" value="0.85" class="w-full">
+              </div>
+
+              <div>
+                <div class="flex justify-between text-[11px] font-mono-tabular mb-0.5">
+                  <span class="text-slate-400">Fase</span>
+                  <span class="text-violet-300">0°</span>
+                </div>
+                <input type="range" data-action="phase" data-idx="0" min="0" max="360" step="1" value="0" class="w-full phase-slider">
+              </div>
+            </div>
+          </div><div class="bg-slate-950/80 border border-slate-800 rounded-xl p-3 flex flex-col justify-between gap-2.5">
+            <div class="flex items-start justify-between gap-1">
+              <div>
+                <div class="text-xs font-semibold text-slate-100">Priem p=2</div>
+                <div class="text-[11px] font-mono-tabular text-slate-400 mt-0.5">m = |29−2| → 27× (2862 Hz)</div>
+              </div>
+              <div class="flex items-center gap-1">
+                <button type="button" data-action="mute" data-idx="1" title="Mute (M)" class="px-1.5 py-0.5 rounded text-[11px] font-mono-tabular border transition bg-slate-900 text-slate-400 border-slate-700 hover:text-slate-200">M</button>
+                <button type="button" data-action="solo" data-idx="1" title="Solo (S)" class="px-1.5 py-0.5 rounded text-[11px] font-mono-tabular border transition bg-slate-900 text-slate-400 border-slate-700 hover:text-slate-200">S</button>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <div>
+                <div class="flex justify-between text-[11px] font-mono-tabular mb-0.5">
+                  <span class="text-slate-400">Amp</span>
+                  <span class="text-sky-300">50%</span>
+                </div>
+                <input type="range" data-action="amp" data-idx="1" min="0" max="1" step="0.01" value="0.5" class="w-full">
+              </div>
+
+              <div>
+                <div class="flex justify-between text-[11px] font-mono-tabular mb-0.5">
+                  <span class="text-slate-400">Fase</span>
+                  <span class="text-violet-300">0°</span>
+                </div>
+                <input type="range" data-action="phase" data-idx="1" min="0" max="360" step="1" value="0" class="w-full phase-slider">
+              </div>
+            </div>
+          </div><div class="bg-slate-950/80 border border-slate-800 rounded-xl p-3 flex flex-col justify-between gap-2.5">
+            <div class="flex items-start justify-between gap-1">
+              <div>
+                <div class="text-xs font-semibold text-slate-100">Priem p=3</div>
+                <div class="text-[11px] font-mono-tabular text-slate-400 mt-0.5">m = |29−3| → 26× (2756 Hz)</div>
+              </div>
+              <div class="flex items-center gap-1">
+                <button type="button" data-action="mute" data-idx="2" title="Mute (M)" class="px-1.5 py-0.5 rounded text-[11px] font-mono-tabular border transition bg-slate-900 text-slate-400 border-slate-700 hover:text-slate-200">M</button>
+                <button type="button" data-action="solo" data-idx="2" title="Solo (S)" class="px-1.5 py-0.5 rounded text-[11px] font-mono-tabular border transition bg-slate-900 text-slate-400 border-slate-700 hover:text-slate-200">S</button>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <div>
+                <div class="flex justify-between text-[11px] font-mono-tabular mb-0.5">
+                  <span class="text-slate-400">Amp</span>
+                  <span class="text-sky-300">33%</span>
+                </div>
+                <input type="range" data-action="amp" data-idx="2" min="0" max="1" step="0.01" value="0.333" class="w-full">
+              </div>
+
+              <div>
+                <div class="flex justify-between text-[11px] font-mono-tabular mb-0.5">
+                  <span class="text-slate-400">Fase</span>
+                  <span class="text-violet-300">0°</span>
+                </div>
+                <input type="range" data-action="phase" data-idx="2" min="0" max="360" step="1" value="0" class="w-full phase-slider">
+              </div>
+            </div>
+          </div><div class="bg-slate-950/80 border border-slate-800 rounded-xl p-3 flex flex-col justify-between gap-2.5">
+            <div class="flex items-start justify-between gap-1">
+              <div>
+                <div class="text-xs font-semibold text-slate-100">Priem p=5</div>
+                <div class="text-[11px] font-mono-tabular text-slate-400 mt-0.5">m = |29−5| → 24× (2544 Hz)</div>
+              </div>
+              <div class="flex items-center gap-1">
+                <button type="button" data-action="mute" data-idx="3" title="Mute (M)" class="px-1.5 py-0.5 rounded text-[11px] font-mono-tabular border transition bg-slate-900 text-slate-400 border-slate-700 hover:text-slate-200">M</button>
+                <button type="button" data-action="solo" data-idx="3" title="Solo (S)" class="px-1.5 py-0.5 rounded text-[11px] font-mono-tabular border transition bg-slate-900 text-slate-400 border-slate-700 hover:text-slate-200">S</button>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <div>
+                <div class="flex justify-between text-[11px] font-mono-tabular mb-0.5">
+                  <span class="text-slate-400">Amp</span>
+                  <span class="text-sky-300">20%</span>
+                </div>
+                <input type="range" data-action="amp" data-idx="3" min="0" max="1" step="0.01" value="0.2" class="w-full">
+              </div>
+
+              <div>
+                <div class="flex justify-between text-[11px] font-mono-tabular mb-0.5">
+                  <span class="text-slate-400">Fase</span>
+                  <span class="text-violet-300">0°</span>
+                </div>
+                <input type="range" data-action="phase" data-idx="3" min="0" max="360" step="1" value="0" class="w-full phase-slider">
+              </div>
+            </div>
+          </div><div class="bg-slate-950/80 border border-slate-800 rounded-xl p-3 flex flex-col justify-between gap-2.5">
+            <div class="flex items-start justify-between gap-1">
+              <div>
+                <div class="text-xs font-semibold text-slate-100">Priem p=7</div>
+                <div class="text-[11px] font-mono-tabular text-slate-400 mt-0.5">m = |29−7| → 22× (2332 Hz)</div>
+              </div>
+              <div class="flex items-center gap-1">
+                <button type="button" data-action="mute" data-idx="4" title="Mute (M)" class="px-1.5 py-0.5 rounded text-[11px] font-mono-tabular border transition bg-slate-900 text-slate-400 border-slate-700 hover:text-slate-200">M</button>
+                <button type="button" data-action="solo" data-idx="4" title="Solo (S)" class="px-1.5 py-0.5 rounded text-[11px] font-mono-tabular border transition bg-slate-900 text-slate-400 border-slate-700 hover:text-slate-200">S</button>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <div>
+                <div class="flex justify-between text-[11px] font-mono-tabular mb-0.5">
+                  <span class="text-slate-400">Amp</span>
+                  <span class="text-sky-300">14%</span>
+                </div>
+                <input type="range" data-action="amp" data-idx="4" min="0" max="1" step="0.01" value="0.143" class="w-full">
+              </div>
+
+              <div>
+                <div class="flex justify-between text-[11px] font-mono-tabular mb-0.5">
+                  <span class="text-slate-400">Fase</span>
+                  <span class="text-violet-300">0°</span>
+                </div>
+                <input type="range" data-action="phase" data-idx="4" min="0" max="360" step="1" value="0" class="w-full phase-slider">
+              </div>
+            </div>
+          </div><div class="bg-slate-950/80 border border-slate-800 rounded-xl p-3 flex flex-col justify-between gap-2.5">
+            <div class="flex items-start justify-between gap-1">
+              <div>
+                <div class="text-xs font-semibold text-slate-100">Priem p=11</div>
+                <div class="text-[11px] font-mono-tabular text-slate-400 mt-0.5">m = |29−11| → 18× (1908 Hz)</div>
+              </div>
+              <div class="flex items-center gap-1">
+                <button type="button" data-action="mute" data-idx="5" title="Mute (M)" class="px-1.5 py-0.5 rounded text-[11px] font-mono-tabular border transition bg-slate-900 text-slate-400 border-slate-700 hover:text-slate-200">M</button>
+                <button type="button" data-action="solo" data-idx="5" title="Solo (S)" class="px-1.5 py-0.5 rounded text-[11px] font-mono-tabular border transition bg-slate-900 text-slate-400 border-slate-700 hover:text-slate-200">S</button>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <div>
+                <div class="flex justify-between text-[11px] font-mono-tabular mb-0.5">
+                  <span class="text-slate-400">Amp</span>
+                  <span class="text-sky-300">9%</span>
+                </div>
+                <input type="range" data-action="amp" data-idx="5" min="0" max="1" step="0.01" value="0.091" class="w-full">
+              </div>
+
+              <div>
+                <div class="flex justify-between text-[11px] font-mono-tabular mb-0.5">
+                  <span class="text-slate-400">Fase</span>
+                  <span class="text-violet-300">0°</span>
+                </div>
+                <input type="range" data-action="phase" data-idx="5" min="0" max="360" step="1" value="0" class="w-full phase-slider">
+              </div>
+            </div>
+          </div><div class="bg-slate-950/80 border border-slate-800 rounded-xl p-3 flex flex-col justify-between gap-2.5">
+            <div class="flex items-start justify-between gap-1">
+              <div>
+                <div class="text-xs font-semibold text-slate-100">Priem p=13</div>
+                <div class="text-[11px] font-mono-tabular text-slate-400 mt-0.5">m = |29−13| → 16× (1696 Hz)</div>
+              </div>
+              <div class="flex items-center gap-1">
+                <button type="button" data-action="mute" data-idx="6" title="Mute (M)" class="px-1.5 py-0.5 rounded text-[11px] font-mono-tabular border transition bg-slate-900 text-slate-400 border-slate-700 hover:text-slate-200">M</button>
+                <button type="button" data-action="solo" data-idx="6" title="Solo (S)" class="px-1.5 py-0.5 rounded text-[11px] font-mono-tabular border transition bg-slate-900 text-slate-400 border-slate-700 hover:text-slate-200">S</button>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <div>
+                <div class="flex justify-between text-[11px] font-mono-tabular mb-0.5">
+                  <span class="text-slate-400">Amp</span>
+                  <span class="text-sky-300">8%</span>
+                </div>
+                <input type="range" data-action="amp" data-idx="6" min="0" max="1" step="0.01" value="0.077" class="w-full">
+              </div>
+
+              <div>
+                <div class="flex justify-between text-[11px] font-mono-tabular mb-0.5">
+                  <span class="text-slate-400">Fase</span>
+                  <span class="text-violet-300">0°</span>
+                </div>
+                <input type="range" data-action="phase" data-idx="6" min="0" max="360" step="1" value="0" class="w-full phase-slider">
+              </div>
+            </div>
+          </div><div class="bg-slate-950/80 border border-slate-800 rounded-xl p-3 flex flex-col justify-between gap-2.5">
+            <div class="flex items-start justify-between gap-1">
+              <div>
+                <div class="text-xs font-semibold text-slate-100">Priem p=17</div>
+                <div class="text-[11px] font-mono-tabular text-slate-400 mt-0.5">m = |29−17| → 12× (1272 Hz)</div>
+              </div>
+              <div class="flex items-center gap-1">
+                <button type="button" data-action="mute" data-idx="7" title="Mute (M)" class="px-1.5 py-0.5 rounded text-[11px] font-mono-tabular border transition bg-slate-900 text-slate-400 border-slate-700 hover:text-slate-200">M</button>
+                <button type="button" data-action="solo" data-idx="7" title="Solo (S)" class="px-1.5 py-0.5 rounded text-[11px] font-mono-tabular border transition bg-slate-900 text-slate-400 border-slate-700 hover:text-slate-200">S</button>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <div>
+                <div class="flex justify-between text-[11px] font-mono-tabular mb-0.5">
+                  <span class="text-slate-400">Amp</span>
+                  <span class="text-sky-300">6%</span>
+                </div>
+                <input type="range" data-action="amp" data-idx="7" min="0" max="1" step="0.01" value="0.059" class="w-full">
+              </div>
+
+              <div>
+                <div class="flex justify-between text-[11px] font-mono-tabular mb-0.5">
+                  <span class="text-slate-400">Fase</span>
+                  <span class="text-violet-300">0°</span>
+                </div>
+                <input type="range" data-action="phase" data-idx="7" min="0" max="360" step="1" value="0" class="w-full phase-slider">
+              </div>
+            </div>
+          </div><div class="bg-slate-950/80 border border-slate-800 rounded-xl p-3 flex flex-col justify-between gap-2.5">
+            <div class="flex items-start justify-between gap-1">
+              <div>
+                <div class="text-xs font-semibold text-slate-100">Priem p=19</div>
+                <div class="text-[11px] font-mono-tabular text-slate-400 mt-0.5">m = |29−19| → 10× (1060 Hz)</div>
+              </div>
+              <div class="flex items-center gap-1">
+                <button type="button" data-action="mute" data-idx="8" title="Mute (M)" class="px-1.5 py-0.5 rounded text-[11px] font-mono-tabular border transition bg-slate-900 text-slate-400 border-slate-700 hover:text-slate-200">M</button>
+                <button type="button" data-action="solo" data-idx="8" title="Solo (S)" class="px-1.5 py-0.5 rounded text-[11px] font-mono-tabular border transition bg-slate-900 text-slate-400 border-slate-700 hover:text-slate-200">S</button>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <div>
+                <div class="flex justify-between text-[11px] font-mono-tabular mb-0.5">
+                  <span class="text-slate-400">Amp</span>
+                  <span class="text-sky-300">5%</span>
+                </div>
+                <input type="range" data-action="amp" data-idx="8" min="0" max="1" step="0.01" value="0.053" class="w-full">
+              </div>
+
+              <div>
+                <div class="flex justify-between text-[11px] font-mono-tabular mb-0.5">
+                  <span class="text-slate-400">Fase</span>
+                  <span class="text-violet-300">0°</span>
+                </div>
+                <input type="range" data-action="phase" data-idx="8" min="0" max="360" step="1" value="0" class="w-full phase-slider">
+              </div>
+            </div>
+          </div><div class="bg-slate-950/80 border border-slate-800 rounded-xl p-3 flex flex-col justify-between gap-2.5">
+            <div class="flex items-start justify-between gap-1">
+              <div>
+                <div class="text-xs font-semibold text-slate-100">Priem p=23</div>
+                <div class="text-[11px] font-mono-tabular text-slate-400 mt-0.5">m = |29−23| → 6× (636 Hz)</div>
+              </div>
+              <div class="flex items-center gap-1">
+                <button type="button" data-action="mute" data-idx="9" title="Mute (M)" class="px-1.5 py-0.5 rounded text-[11px] font-mono-tabular border transition bg-slate-900 text-slate-400 border-slate-700 hover:text-slate-200">M</button>
+                <button type="button" data-action="solo" data-idx="9" title="Solo (S)" class="px-1.5 py-0.5 rounded text-[11px] font-mono-tabular border transition bg-slate-900 text-slate-400 border-slate-700 hover:text-slate-200">S</button>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <div>
+                <div class="flex justify-between text-[11px] font-mono-tabular mb-0.5">
+                  <span class="text-slate-400">Amp</span>
+                  <span class="text-sky-300">4%</span>
+                </div>
+                <input type="range" data-action="amp" data-idx="9" min="0" max="1" step="0.01" value="0.043" class="w-full">
+              </div>
+
+              <div>
+                <div class="flex justify-between text-[11px] font-mono-tabular mb-0.5">
+                  <span class="text-slate-400">Fase</span>
+                  <span class="text-violet-300">0°</span>
+                </div>
+                <input type="range" data-action="phase" data-idx="9" min="0" max="360" step="1" value="0" class="w-full phase-slider">
+              </div>
+            </div>
+          </div><div class="bg-slate-950/80 border border-slate-800 rounded-xl p-3 flex flex-col justify-between gap-2.5">
+            <div class="flex items-start justify-between gap-1">
+              <div>
+                <div class="text-xs font-semibold text-slate-100">Priem p=29</div>
+                <div class="text-[11px] font-mono-tabular text-slate-400 mt-0.5">m = |29−29| → 1× (106 Hz)</div>
+              </div>
+              <div class="flex items-center gap-1">
+                <button type="button" data-action="mute" data-idx="10" title="Mute (M)" class="px-1.5 py-0.5 rounded text-[11px] font-mono-tabular border transition bg-slate-900 text-slate-400 border-slate-700 hover:text-slate-200">M</button>
+                <button type="button" data-action="solo" data-idx="10" title="Solo (S)" class="px-1.5 py-0.5 rounded text-[11px] font-mono-tabular border transition bg-slate-900 text-slate-400 border-slate-700 hover:text-slate-200">S</button>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <div>
+                <div class="flex justify-between text-[11px] font-mono-tabular mb-0.5">
+                  <span class="text-slate-400">Amp</span>
+                  <span class="text-sky-300">3%</span>
+                </div>
+                <input type="range" data-action="amp" data-idx="10" min="0" max="1" step="0.01" value="0.034" class="w-full">
+              </div>
+
+              <div>
+                <div class="flex justify-between text-[11px] font-mono-tabular mb-0.5">
+                  <span class="text-slate-400">Fase</span>
+                  <span class="text-violet-300">0°</span>
+                </div>
+                <input type="range" data-action="phase" data-idx="10" min="0" max="360" step="1" value="0" class="w-full phase-slider">
+              </div>
+            </div>
+          </div></div>
+    </section>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+
+      // =========================================================================
+      // 1. CONSTANTEN & VOORAF BEREKENDE PRIEMGETALLEN
+      // =========================================================================
+      const WINDOW_SIZE = 10;
+      const PRIME_COUNT = 500;
+      const MAX_TABLE_SIZE = 8192; // Veilige bovengrens voor PeriodicWave-tabellen
+
+      /**
+       * Genereert de eerste `count` priemgetallen met een zeef/proefdeling.
+       * Begint gegarandeerd met 2, 3, 5, 7, 11, 13, 17, 19, 23, 29.
+       */
+      function generatePrimes(count) {
+        const primes = [];
+        let candidate = 2;
+        while (primes.length < count) {
+          let isPrime = true;
+          const limit = Math.floor(Math.sqrt(candidate));
+          for (let i = 0; i < primes.length; i++) {
+            const p = primes[i];
+            if (p > limit) break;
+            if (candidate % p === 0) {
+              isPrime = false;
+              break;
+            }
+          }
+          if (isPrime) {
+            primes.push(candidate);
+          }
+          candidate += candidate === 2 ? 1 : 2;
+        }
+        return primes;
+      }
+
+      const PRIMES = generatePrimes(PRIME_COUNT);
+      const MAX_STEP_INDEX = PRIMES.length - WINDOW_SIZE; // Laatste geldige startindex
+
+      // Bereken gemiddelde interpriemafstand over de beschikbare overgangen
+      const PRIME_GAPS = [];
+      for (let i = 0; i < PRIMES.length - 1; i++) {
+        PRIME_GAPS.push(PRIMES[i + 1] - PRIMES[i]);
+      }
+      const AVG_PRIME_GAP =
+        PRIME_GAPS.reduce((acc, g) => acc + g, 0) / Math.max(1, PRIME_GAPS.length);
+
+      // =========================================================================
+      // 2. APPLICATIESTOESTAND (STATE)
+      // =========================================================================
+      const state = {
+        isPlaying: false,
+        stepIndex: 0, // 0-gebaseerd (#1 is stepIndex 0)
+        loop: true,
+        dt: 0.25, // Tijdseenheid in seconden
+        anchorFreq: 220, // Ankerfrequentie in Hz
+        glide: 0.45, // 0.0 .. 1.0 (0% .. 100%)
+        masterGain: 0.35, // 0.0 .. 1.0
+        activeVoiceSlot: 'A', // 'A' of 'B' voor actieve/inkomende stem
+        nextStepScheduledAt: 0, // AudioContext tijd voor volgende stap
+        currentStepDuration: 0.25,
+        // 11 stemmen: index 0 is grondtoon f0, index 1..10 zijn de 10 priemen in het venster
+        voices: Array.from({ length: WINDOW_SIZE + 1 }, (_, idx) => ({
+          index: idx,
+          amp: idx === 0 ? 0.85 : Number((1 / PRIMES[idx - 1]).toFixed(3)),
+          phaseDeg: 0,
+          muted: false,
+          solo: false
+        }))
+      };
+
+      // =========================================================================
+      // 3. WISKUNDIGE HULPFUNCTIES VOOR VENSTER, M & FREQUENTIE
+      // =========================================================================
+
+      /**
+       * Geeft het actieve 10-priemvenster en bijbehorende aftrek-ordes m.
+       * p_laatste is het laatste priemgetal van het venster (index 9).
+       * m = Math.max(1, Math.abs(p_laatste - p)).
+       */
+      function getWindowData(stepIdx) {
+        const safeIdx = Math.max(0, Math.min(MAX_STEP_INDEX, stepIdx));
+        const windowPrimes = PRIMES.slice(safeIdx, safeIdx + WINDOW_SIZE);
+        const pLast = windowPrimes[windowPrimes.length - 1];
+        const gap = PRIMES[safeIdx + WINDOW_SIZE]
+          ? PRIMES[safeIdx + WINDOW_SIZE] - pLast
+          : PRIME_GAPS[PRIME_GAPS.length - 1];
+
+        const items = windowPrimes.map((p, i) => {
+          const m = Math.max(1, Math.abs(pLast - p));
+          return {
+            slotIndex: i + 1, // 1..10
+            prime: p,
+            pLast,
+            m
+          };
+        });
+
+        return {
+          stepIndex: safeIdx,
+          windowPrimes,
+          pLast,
+          gap,
+          nextPrime: PRIMES[safeIdx + WINDOW_SIZE] ?? null,
+          items
+        };
+      }
+
+      /**
+       * Berekent de grondfrequentie f0 rond `anchorFreq` (~2 octaven gemiddeld bereik,
+       * dus grofweg ±1 octaaf rond het anker) op basis van de actieve interpriemafstand
+       * ten opzichte van AVG_PRIME_GAP, met zachte compressie (tanh) tegen uitschieters.
+       */
+      function computeFundamentalFreq(gap, anchorFreq) {
+        const safeGap = Math.max(1, gap);
+        const safeAvg = Math.max(0.5, AVG_PRIME_GAP);
+        // Logaritmische afwijking ten opzichte van gemiddelde gap
+        const logRatio = Math.log2(safeGap / safeAvg);
+        // Zachte compressie binnen ~±1 octaaf (totaal ~2 octaven gemiddeld bereik)
+        const compressedOctaves = Math.tanh(logRatio * 0.85) * 1.15;
+        const f0 = anchorFreq * Math.pow(2, compressedOctaves);
+        return Math.max(20, Math.min(4000, f0));
+      }
+
+      /**
+       * Controleert of een getal een priemgetal is.
+       */
+      function isPrimeNumber(n) {
+        if (n < 2) return false;
+        if (n === 2) return true;
+        if (n % 2 === 0) return false;
+        const limit = Math.floor(Math.sqrt(n));
+        for (let d = 3; d <= limit; d += 2) {
+          if (n % d === 0) return false;
+        }
+        return true;
+      }
+
+      /**
+       * Geeft de effectieve amplitude van stem i rekening houdend met Mute en Solo.
+       */
+      function getEffectiveVoiceAmp(voice) {
+        if (voice.muted) return 0;
+        const anySolo = state.voices.some((v) => v.solo);
+        if (anySolo && !voice.solo) return 0;
+        return Math.max(0, Math.min(1, voice.amp));
+      }
+
+      // =========================================================================
+      // 4. WEB AUDIO ENGINE (DUAL VOICE A/B + PERIODICWAVE + ANALYSER)
+      // =========================================================================
+      const audioEngine = {
+        ctx: null,
+        masterGain: null,
+        analyser: null,
+        voices: {
+          A: { osc: null, gain: null },
+          B: { osc: null, gain: null }
+        },
+        timeDomainData: null,
+        freqDomainData: null,
+
+        /**
+         * Initialiseert AudioContext, Master GainNode, AnalyserNode en
+         * de dubbele stem-architectuur (Voice A en Voice B).
+         */
+        ensureContext() {
+          if (this.ctx) {
+            if (this.ctx.state === 'suspended') {
+              this.ctx.resume().catch((err) => {
+                showBanner('Kon AudioContext niet hervatten: ' + err.message, 'error');
+              });
+            }
+            return true;
+          }
+
+          try {
+            const AudioCtx = window.AudioContext || window.webkitAudioContext;
+            if (!AudioCtx) {
+              showBanner('Web Audio API wordt niet ondersteund in deze browser.', 'error');
+              return false;
+            }
+
+            const ctx = new AudioCtx();
+            const masterGain = ctx.createGain();
+            masterGain.gain.setValueAtTime(state.masterGain * 0.45, ctx.currentTime);
+
+            const analyser = ctx.createAnalyser();
+            analyser.fftSize = 2048;
+            analyser.smoothingTimeConstant = 0.82;
+
+            masterGain.connect(analyser);
+            analyser.connect(ctx.destination);
+
+            const createVoicePair = () => {
+              const osc = ctx.createOscillator();
+              const gain = ctx.createGain();
+              gain.gain.setValueAtTime(0.0001, ctx.currentTime);
+              osc.connect(gain);
+              gain.connect(masterGain);
+              osc.start();
+              return { osc, gain };
+            };
+
+            this.ctx = ctx;
+            this.masterGain = masterGain;
+            this.analyser = analyser;
+            this.voices.A = createVoicePair();
+            this.voices.B = createVoicePair();
+            this.timeDomainData = new Float32Array(analyser.fftSize);
+            this.freqDomainData = new Uint8Array(analyser.frequencyBinCount);
+
+            updateNyquistLabel();
+            return true;
+          } catch (err) {
+            showBanner('Fout bij initialiseren van Web Audio: ' + err.message, 'error');
+            return false;
+          }
+        },
+
+        /**
+         * Bouwt een veilige PeriodicWave op basis van de 11 stemmen (grondtoon + 10 priemboventonen)
+         * en de afgetrokken boventoon-ordes m = max(1, |p_laatste - p|).
+         * Begrenst strikt op Nyquist-frequentie en MAX_TABLE_SIZE = 8192.
+         */
+        buildPeriodicWave(windowData, f0) {
+          if (!this.ctx) return null;
+
+          const sampleRate = this.ctx.sampleRate || 48000;
+          const nyquist = sampleRate * 0.5;
+          const safeF0 = Math.max(20, f0);
+
+          // Bepaal hoogste benodigde harmonische index
+          let maxHarmonicOrder = 1;
+          for (let i = 1; i < windowData.items.length; i++) {
+            const m = windowData.items[i].m;
+            if (m > maxHarmonicOrder) maxHarmonicOrder = m;
+          }
+
+          // Tabelgrootte begrenzen op MAX_TABLE_SIZE (8192) en minimaal 64
+          const tableSize = Math.max(
+            64,
+            Math.min(MAX_TABLE_SIZE, Math.pow(2, Math.ceil(Math.log2(maxHarmonicOrder + 2))))
+          );
+
+          const real = new Float32Array(tableSize);
+          const imag = new Float32Array(tableSize);
+          // DC-offset op 0 houden
+          real[0] = 0;
+          imag[0] = 0;
+
+          // Stem 0: Grondtoon (harmonische 1)
+          const v0 = state.voices[0];
+          const amp0 = getEffectiveVoiceAmp(v0);
+          if (amp0 > 0 && safeF0 < nyquist) {
+            const phi0 = (v0.phaseDeg * Math.PI) / 180;
+            // In Web Audio PeriodicWave:
+            // x(t) = sum_{k=1}^{N-1} [ real[k]*cos(2*pi*k*f*t) + imag[k]*sin(2*pi*k*f*t) ]
+            // Met fase phi: cos(wt - phi) = cos(phi)cos(wt) + sin(phi)sin(wt)
+            real[1] += amp0 * Math.cos(phi0);
+            imag[1] += amp0 * Math.sin(phi0);
+          }
+
+          // Stemmen 1..10: Afgetrokken boventoon-ordes m = max(1, |p_laatste - p|)
+          for (let i = 0; i < windowData.items.length; i++) {
+            const voice = state.voices[i + 1];
+            const amp = getEffectiveVoiceAmp(voice);
+            if (amp <= 0) continue;
+
+            const m = Math.max(1, Math.min(tableSize - 1, windowData.items[i].m));
+            const partialFreq = safeF0 * m;
+
+            // Strikt onder Nyquist blijven om aliasing/IndexSizeError/NotSupportedError te voorkomen
+            if (partialFreq >= nyquist * 0.96) continue;
+
+            const phi = (voice.phaseDeg * Math.PI) / 180;
+            real[m] += amp * Math.cos(phi);
+            imag[m] += amp * Math.sin(phi);
+          }
+
+          // Normaliseer energie indien som hoog is zodat oversturing beperkt blijft
+          let sumAmp = 0;
+          for (let k = 1; k < tableSize; k++) {
+            sumAmp += Math.hypot(real[k], imag[k]);
+          }
+          if (sumAmp > 1.8) {
+            const scale = 1.8 / sumAmp;
+            for (let k = 1; k < tableSize; k++) {
+              real[k] *= scale;
+              imag[k] *= scale;
+            }
+          }
+
+          try {
+            return this.ctx.createPeriodicWave(real, imag, { disableNormalization: false });
+          } catch (err) {
+            showBanner('PeriodicWave fout: ' + err.message, 'error');
+            return null;
+          }
+        },
+
+        /**
+         * Past een nieuwe stap toe op de actieve/inkomende stem (A of B) en voert
+         * een gecontroleerde crossfade/glide uit volgens `state.glide`.
+         */
+        triggerStepAudio(stepIdx, startTimeSec, stepDurationSec, isImmediateJump = false) {
+          if (!this.ensureContext() || !this.ctx) return;
+
+          const now = this.ctx.currentTime;
+          const t0 = Math.max(now, startTimeSec);
+          const wData = getWindowData(stepIdx);
+          const f0 = computeFundamentalFreq(wData.gap, state.anchorFreq);
+          const wave = this.buildPeriodicWave(wData, f0);
+          if (!wave) return;
+
+          // Wissel tussen Voice A en Voice B voor soepele overgangen
+          const incomingKey = state.activeVoiceSlot === 'A' ? 'B' : 'A';
+          const outgoingKey = state.activeVoiceSlot;
+          const incoming = this.voices[incomingKey];
+          const outgoing = this.voices[outgoingKey];
+
+          // Bereken glide-tijd op basis van glide (0..1) en stapduur
+          const glideRatio = isImmediateJump ? Math.min(0.15, state.glide * 0.25) : state.glide;
+          const glideTime = Math.max(0.008, Math.min(stepDurationSec * 0.9, glideRatio * stepDurationSec));
+
+          // Inkomende stem instellen
+          incoming.osc.setPeriodicWave(wave);
+          incoming.osc.frequency.cancelScheduledValues(t0);
+          if (glideRatio > 0.02) {
+            const prevFreq = outgoing.osc.frequency.value || f0;
+            incoming.osc.frequency.setValueAtTime(prevFreq, t0);
+            incoming.osc.frequency.exponentialRampToValueAtTime(Math.max(20, f0), t0 + glideTime);
+          } else {
+            incoming.osc.frequency.setValueAtTime(Math.max(20, f0), t0);
+          }
+
+          incoming.gain.gain.cancelScheduledValues(t0);
+          incoming.gain.gain.setValueAtTime(Math.max(0.0001, incoming.gain.gain.value), t0);
+          incoming.gain.gain.linearRampToValueAtTime(1.0, t0 + glideTime);
+
+          // Uitgaande stem rustig uitfaden
+          outgoing.gain.gain.cancelScheduledValues(t0);
+          outgoing.gain.gain.setValueAtTime(Math.max(0.0001, outgoing.gain.gain.value), t0);
+          outgoing.gain.gain.linearRampToValueAtTime(0.0001, t0 + glideTime);
+
+          state.activeVoiceSlot = incomingKey;
+        },
+
+        /**
+         * Werkt de klankkleur (PeriodicWave) van de actieve stem live bij wanneer
+         * amplitude, fase, mute of solo wijzigt tijdens het spelen.
+         */
+        refreshActiveTimbre() {
+          if (!this.ctx || !state.isPlaying) return;
+          const now = this.ctx.currentTime;
+          const wData = getWindowData(state.stepIndex);
+          const f0 = computeFundamentalFreq(wData.gap, state.anchorFreq);
+          const wave = this.buildPeriodicWave(wData, f0);
+          if (!wave) return;
+
+          const active = this.voices[state.activeVoiceSlot];
+          active.osc.setPeriodicWave(wave);
+          active.osc.frequency.cancelScheduledValues(now);
+          active.osc.frequency.setValueAtTime(Math.max(20, f0), now);
+        },
+
+        /**
+         * Werkt master gain bij met cancelScheduledValues() en setValueAtTime().
+         */
+        setMasterGain(val) {
+          state.masterGain = Math.max(0, Math.min(1, val));
+          if (!this.ctx || !this.masterGain) return;
+          const now = this.ctx.currentTime;
+          this.masterGain.gain.cancelScheduledValues(now);
+          this.masterGain.gain.setValueAtTime(state.masterGain * 0.45, now);
+        },
+
+        /**
+         * Foutloze stop: annuleert geplande waarden en zet gains veilig op 0.
+         */
+        stopAll() {
+          if (!this.ctx) return;
+          const now = this.ctx.currentTime;
+
+          ['A', 'B'].forEach((key) => {
+            const v = this.voices[key];
+            if (v && v.gain) {
+              v.gain.gain.cancelScheduledValues(now);
+              v.gain.gain.setValueAtTime(0.0001, now);
+              v.gain.gain.linearRampToValueAtTime(0.0, now + 0.02);
+            }
+          });
+
+          if (this.masterGain) {
+            this.masterGain.gain.cancelScheduledValues(now);
+            this.masterGain.gain.setValueAtTime(state.masterGain * 0.45, now);
+          }
+        }
+      };
+
+      // =========================================================================
+      // 5. SEQUENCER / TIMING (INTERPRIEMAFSTAND × Δt)
+      // =========================================================================
+      let schedulerTimerId = null;
+
+      function getStepIntervalSeconds(stepIdx) {
+        const wData = getWindowData(stepIdx);
+        return Math.max(0.02, wData.gap * state.dt);
+      }
+
+      function advanceStep(manualJump = false) {
+        let nextIdx = state.stepIndex + 1;
+        if (nextIdx > MAX_STEP_INDEX) {
+          if (state.loop) {
+            nextIdx = 0;
+          } else {
+            stopPlayback();
+            showBanner('Einde van de vooraf berekende priemlijst bereikt (Loop staat uit).', 'info');
+            return;
+          }
+        }
+        state.stepIndex = nextIdx;
+        const interval = getStepIntervalSeconds(state.stepIndex);
+        state.currentStepDuration = interval;
+
+        if (state.isPlaying && audioEngine.ctx) {
+          const now = audioEngine.ctx.currentTime;
+          const startAt = manualJump ? now : Math.max(now, state.nextStepScheduledAt);
+          audioEngine.triggerStepAudio(state.stepIndex, startAt, interval, manualJump);
+          state.nextStepScheduledAt = startAt + interval;
+        }
+
+        updateAllUI();
+      }
+
+      function startPlayback() {
+        if (!audioEngine.ensureContext()) return;
+        state.isPlaying = true;
+        const now = audioEngine.ctx.currentTime;
+        const interval = getStepIntervalSeconds(state.stepIndex);
+        state.currentStepDuration = interval;
+
+        audioEngine.setMasterGain(state.masterGain);
+        audioEngine.triggerStepAudio(state.stepIndex, now, interval, true);
+        state.nextStepScheduledAt = now + interval;
+
+        if (!schedulerTimerId) {
+          schedulerTimerId = window.setInterval(() => {
+            if (!state.isPlaying || !audioEngine.ctx) return;
+            const currentAudioTime = audioEngine.ctx.currentTime;
+            // Lookahead van 80 ms voor strakke timing
+            while (state.isPlaying && currentAudioTime + 0.08 >= state.nextStepScheduledAt) {
+              advanceStep(false);
+              if (!state.isPlaying) break;
+            }
+          }, 25);
+        }
+
+        clearBanner();
+        updateAllUI();
+      }
+
+      function stopPlayback() {
+        state.isPlaying = false;
+        if (schedulerTimerId) {
+          clearInterval(schedulerTimerId);
+          schedulerTimerId = null;
+        }
+        audioEngine.stopAll();
+        updateAllUI();
+      }
+
+      function resetToFirstStep() {
+        state.stepIndex = 0;
+        const interval = getStepIntervalSeconds(0);
+        state.currentStepDuration = interval;
+        if (state.isPlaying && audioEngine.ctx) {
+          const now = audioEngine.ctx.currentTime;
+          audioEngine.triggerStepAudio(0, now, interval, true);
+          state.nextStepScheduledAt = now + interval;
+        }
+        updateAllUI();
+      }
+
+      // =========================================================================
+      // 6. PRESETS & STEMREGELAARS (GRONDTOON + 10 PRIEMBOVENTONEN)
+      // =========================================================================
+      function applyPreset(presetName) {
+        const wData = getWindowData(state.stepIndex);
+
+        state.voices.forEach((voice, idx) => {
+          if (idx === 0) {
+            // Grondtoon f0
+            if (presetName === 'natural') voice.amp = 0.85;
+            else if (presetName === 'equal-energy') voice.amp = 0.75;
+            else if (presetName === 'equal-amp') voice.amp = 0.65;
+            else if (presetName === 'primes-only') voice.amp = 0.25;
+            return;
+          }
+
+          const item = wData.items[idx - 1];
+          const p = item.prime;
+          const m = item.m;
+
+          if (presetName === 'natural') {
+            // Natuurlijk verval (1/p)
+            voice.amp = Number(Math.min(1, 1 / p).toFixed(3));
+          } else if (presetName === 'equal-energy') {
+            // Gelijke energie (1/√p)
+            voice.amp = Number(Math.min(1, 1 / Math.sqrt(p)).toFixed(3));
+          } else if (presetName === 'equal-amp') {
+            // Gelijke amplitude
+            voice.amp = 0.55;
+          } else if (presetName === 'primes-only') {
+            // Alleen priems: nadruk op priemgetallen p en priem-ordes m
+            const primeBoost = isPrimeNumber(p) ? 0.75 : 0.08;
+            const orderPrimeFactor = isPrimeNumber(m) ? 1.0 : 0.35;
+            voice.amp = Number(Math.min(1, primeBoost * orderPrimeFactor).toFixed(3));
+          }
+        });
+
+        // Markeer actieve preset-knop
+        document.querySelectorAll('.preset-btn').forEach((btn) => {
+          const isActive = btn.dataset.preset === presetName;
+          btn.className = isActive
+            ? 'preset-btn px-2.5 py-1.5 rounded-lg text-xs font-medium bg-sky-500/20 text-sky-200 border border-sky-500/40 hover:bg-sky-500/30 transition'
+            : 'preset-btn px-2.5 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700 hover:bg-slate-700 transition';
+        });
+
+        renderVoiceControls();
+        audioEngine.refreshActiveTimbre();
+      }
+
+      function renderVoiceControls() {
+        const grid = document.getElementById('voices-grid');
+        if (!grid) return;
+
+        const wData = getWindowData(state.stepIndex);
+        const f0 = computeFundamentalFreq(wData.gap, state.anchorFreq);
+
+        grid.innerHTML = '';
+
+        state.voices.forEach((voice, idx) => {
+          const isFund = idx === 0;
+          const item = !isFund ? wData.items[idx - 1] : null;
+          const harmonicOrder = isFund ? 1 : item.m;
+          const partialFreq = f0 * harmonicOrder;
+
+          const card = document.createElement('div');
+          card.className =
+            'bg-slate-950/80 border border-slate-800 rounded-xl p-3 flex flex-col justify-between gap-2.5';
+
+          const titleText = isFund
+            ? 'Grondtoon (f0)'
+            : `Priem p=${item.prime}`;
+          const subText = isFund
+            ? `1× f0 • ${f0.toFixed(1)} Hz`
+            : `m = |${item.pLast}−${item.prime}| → ${harmonicOrder}× (${partialFreq.toFixed(0)} Hz)`;
+
+          card.innerHTML = `
+            <div class="flex items-start justify-between gap-1">
+              <div>
+                <div class="text-xs font-semibold ${isFund ? 'text-emerald-300' : 'text-slate-100'}">${titleText}</div>
+                <div class="text-[11px] font-mono-tabular text-slate-400 mt-0.5">${subText}</div>
+              </div>
+              <div class="flex items-center gap-1">
+                <button type="button" data-action="mute" data-idx="${idx}" title="Mute (M)"
+                  class="px-1.5 py-0.5 rounded text-[11px] font-mono-tabular border transition ${
+                    voice.muted
+                      ? 'bg-rose-500/25 text-rose-200 border-rose-500/50'
+                      : 'bg-slate-900 text-slate-400 border-slate-700 hover:text-slate-200'
+                  }">M</button>
+                <button type="button" data-action="solo" data-idx="${idx}" title="Solo (S)"
+                  class="px-1.5 py-0.5 rounded text-[11px] font-mono-tabular border transition ${
+                    voice.solo
+                      ? 'bg-amber-400/25 text-amber-200 border-amber-400/50'
+                      : 'bg-slate-900 text-slate-400 border-slate-700 hover:text-slate-200'
+                  }">S</button>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <div>
+                <div class="flex justify-between text-[11px] font-mono-tabular mb-0.5">
+                  <span class="text-slate-400">Amp</span>
+                  <span class="text-sky-300">${Math.round(voice.amp * 100)}%</span>
+                </div>
+                <input type="range" data-action="amp" data-idx="${idx}" min="0" max="1" step="0.01"
+                  value="${voice.amp}" class="w-full" />
+              </div>
+
+              <div>
+                <div class="flex justify-between text-[11px] font-mono-tabular mb-0.5">
+                  <span class="text-slate-400">Fase</span>
+                  <span class="text-violet-300">${Math.round(voice.phaseDeg)}°</span>
+                </div>
+                <input type="range" data-action="phase" data-idx="${idx}" min="0" max="360" step="1"
+                  value="${voice.phaseDeg}" class="w-full phase-slider" />
+              </div>
+            </div>
+          `;
+
+          grid.appendChild(card);
+        });
+      }
+
+      // Gedelegeerde events voor stem-sliders en M/S knoppen
+      document.getElementById('voices-grid').addEventListener('input', (e) => {
+        const target = e.target;
+        const idx = Number(target.dataset.idx);
+        const action = target.dataset.action;
+        if (Number.isNaN(idx) || !state.voices[idx]) return;
+
+        if (action === 'amp') {
+          state.voices[idx].amp = Number(target.value);
+          renderVoiceControls();
+          audioEngine.refreshActiveTimbre();
+        } else if (action === 'phase') {
+          state.voices[idx].phaseDeg = Number(target.value);
+          renderVoiceControls();
+          audioEngine.refreshActiveTimbre();
+        }
+      });
+
+      document.getElementById('voices-grid').addEventListener('click', (e) => {
+        const btn = e.target.closest('button[data-action]');
+        if (!btn) return;
+        const idx = Number(btn.dataset.idx);
+        const action = btn.dataset.action;
+        if (Number.isNaN(idx) || !state.voices[idx]) return;
+
+        if (action === 'mute') {
+          state.voices[idx].muted = !state.voices[idx].muted;
+        } else if (action === 'solo') {
+          state.voices[idx].solo = !state.voices[idx].solo;
+        }
+        renderVoiceControls();
+        audioEngine.refreshActiveTimbre();
+      });
+
+      // =========================================================================
+      // 7. UI-UPDATE & MELDINGEN
+      // =========================================================================
+      function showBanner(message, type = 'info') {
+        const banner = document.getElementById('status-banner');
+        if (!banner) return;
+        banner.textContent = message;
+        banner.classList.remove('hidden', 'bg-rose-500/15', 'text-rose-200', 'border-rose-500/40', 'bg-sky-500/15', 'text-sky-200', 'border-sky-500/40');
+        if (type === 'error') {
+          banner.classList.add('bg-rose-500/15', 'text-rose-200', 'border-rose-500/40');
+        } else {
+          banner.classList.add('bg-sky-500/15', 'text-sky-200', 'border-sky-500/40');
+        }
+      }
+
+      function clearBanner() {
+        const banner = document.getElementById('status-banner');
+        if (banner) banner.classList.add('hidden');
+      }
+
+      function updateNyquistLabel() {
+        const el = document.getElementById('fft-nyquist');
+        if (el && audioEngine.ctx) {
+          el.textContent = ((audioEngine.ctx.sampleRate || 48000) / 2000).toFixed(1) + ' kHz';
+        }
+      }
+
+      function updateAllUI() {
+        const wData = getWindowData(state.stepIndex);
+        const f0 = computeFundamentalFreq(wData.gap, state.anchorFreq);
+        const nextInterval = getStepIntervalSeconds(state.stepIndex);
+
+        const statusBadge = document.getElementById('audio-status-badge');
+        if (statusBadge) {
+          statusBadge.textContent = state.isPlaying ? 'Audio: Actief' : 'Audio: Gestopt';
+          statusBadge.className = state.isPlaying
+            ? 'text-xs font-mono-tabular px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
+            : 'text-xs font-mono-tabular px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700';
+        }
+
+        document.getElementById('play-icon').textContent = state.isPlaying ? '■' : '▶';
+        document.getElementById('play-label').textContent = state.isPlaying ? 'Stop' : 'Start';
+
+        const loopBtn = document.getElementById('btn-loop');
+        loopBtn.setAttribute('aria-pressed', String(state.loop));
+        loopBtn.textContent = state.loop ? 'Loop: Aan' : 'Loop: Uit';
+        loopBtn.className = state.loop
+          ? 'px-3 py-2 rounded-lg text-sm font-medium bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 hover:bg-emerald-500/30 transition'
+          : 'px-3 py-2 rounded-lg text-sm font-medium bg-slate-800 text-slate-400 border border-slate-700 hover:bg-slate-700 transition';
+
+        document.getElementById('metric-step').textContent = `#${state.stepIndex + 1} / ${MAX_STEP_INDEX + 1}`;
+        document.getElementById('metric-gap').textContent = `${wData.gap} (${wData.nextPrime ?? '—'} − ${wData.pLast})`;
+        document.getElementById('metric-next-interval').textContent = `${nextInterval.toFixed(3)} s`;
+        document.getElementById('metric-plast').textContent = String(wData.pLast);
+        document.getElementById('metric-f0').textContent = `${f0.toFixed(1)} Hz`;
+        document.getElementById('metric-active-voice').textContent = `Voice ${state.activeVoiceSlot}`;
+
+        document.getElementById('val-dt').textContent = `${state.dt.toFixed(2)} s`;
+        document.getElementById('val-anchor').textContent = `${Math.round(state.anchorFreq)} Hz`;
+        document.getElementById('val-glide').textContent = `${Math.round(state.glide * 100)}%`;
+        document.getElementById('val-master').textContent = `${Math.round(state.masterGain * 100)}%`;
+
+        document.getElementById('timeline-summary').textContent =
+          `Venster: [${wData.windowPrimes.join(', ')}] • f0 = ${f0.toFixed(1)} Hz`;
+
+        renderVoiceControls();
+      }
+
+      // =========================================================================
+      // 8. EVENT LISTENERS (CONTROLS & SNELTOETS SPATIEBALK)
+      // =========================================================================
+      document.getElementById('btn-play-stop').addEventListener('click', () => {
+        if (state.isPlaying) stopPlayback();
+        else startPlayback();
+      });
+
+      document.getElementById('btn-next-step').addEventListener('click', () => {
+        advanceStep(true);
+      });
+
+      document.getElementById('btn-reset').addEventListener('click', () => {
+        resetToFirstStep();
+      });
+
+      document.getElementById('btn-loop').addEventListener('click', () => {
+        state.loop = !state.loop;
+        updateAllUI();
+      });
+
+      document.getElementById('slider-dt').addEventListener('input', (e) => {
+        state.dt = Number(e.target.value);
+        if (state.isPlaying && audioEngine.ctx) {
+          const now = audioEngine.ctx.currentTime;
+          const newInterval = getStepIntervalSeconds(state.stepIndex);
+          state.nextStepScheduledAt = Math.max(now + 0.02, now + newInterval);
+        }
+        updateAllUI();
+      });
+
+      document.getElementById('slider-anchor').addEventListener('input', (e) => {
+        state.anchorFreq = Number(e.target.value);
+        updateAllUI();
+        audioEngine.refreshActiveTimbre();
+      });
+
+      document.getElementById('slider-glide').addEventListener('input', (e) => {
+        state.glide = Number(e.target.value) / 100;
+        updateAllUI();
+      });
+
+      document.getElementById('slider-master').addEventListener('input', (e) => {
+        const val = Number(e.target.value) / 100;
+        audioEngine.setMasterGain(val);
+        updateAllUI();
+      });
+
+      document.querySelectorAll('.preset-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          applyPreset(btn.dataset.preset);
+        });
+      });
+
+      // Spatiebalk voor Play/Stop wanneer focus niet op een invoerveld zit
+      window.addEventListener('keydown', (e) => {
+        const tag = (e.target && e.target.tagName) || '';
+        const isInput =
+          tag === 'INPUT' ||
+          tag === 'TEXTAREA' ||
+          tag === 'SELECT' ||
+          (e.target && e.target.isContentEditable);
+
+        if (e.code === 'Space' && !isInput) {
+          e.preventDefault();
+          if (state.isPlaying) stopPlayback();
+          else startPlayback();
+        }
+      });
+
+      // =========================================================================
+      // 9. CANVAS VISUALISATIES (TIJDLIJN, OSCILLOSCOOP & FFT-SPECTRUM)
+      // =========================================================================
+      const timelineCanvas = document.getElementById('canvas-timeline');
+      const scopeCanvas = document.getElementById('canvas-scope');
+      const fftCanvas = document.getElementById('canvas-fft');
+
+      /**
+       * Past canvas-resolutie aan op de containeromvang en devicePixelRatio
+       * zonder vaste width/height attributen in de HTML.
+       */
+      function resizeCanvasToDisplaySize(canvas) {
+        if (!canvas) return null;
+        const rect = canvas.getBoundingClientRect();
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        const targetW = Math.max(100, Math.round(rect.width * dpr));
+        const targetH = Math.max(80, Math.round(rect.height * dpr));
+
+        if (canvas.width !== targetW || canvas.height !== targetH) {
+          canvas.width = targetW;
+          canvas.height = targetH;
+        }
+
+        const ctx = canvas.getContext('2d');
+        return { ctx, width: targetW, height: targetH, dpr };
+      }
+
+      /**
+       * Canvas 1: Schuivende 10-priem tijdlijn met actieve priemen, gaps,
+       * afgetrokken ordes m en berekende frequenties.
+       */
+      function drawTimelineCanvas() {
+        const sized = resizeCanvasToDisplaySize(timelineCanvas);
+        if (!sized) return;
+        const { ctx, width, height, dpr } = sized;
+
+        ctx.clearRect(0, 0, width, height);
+        ctx.fillStyle = '#020617';
+        ctx.fillRect(0, 0, width, height);
+
+        const wData = getWindowData(state.stepIndex);
+        const f0 = computeFundamentalFreq(wData.gap, state.anchorFreq);
+
+        // Toon omliggende priemen in de tijdlijn (3 ervoor, 10 actief, 4 erna)
+        const preCount = 3;
+        const postCount = 4;
+        const startGlobalIdx = Math.max(0, wData.stepIndex - preCount);
+        const endGlobalIdx = Math.min(PRIMES.length - 1, wData.stepIndex + WINDOW_SIZE - 1 + postCount);
+        const totalCols = Math.max(1, endGlobalIdx - startGlobalIdx + 1);
+
+        const padX = 14 * dpr;
+        const padY = 14 * dpr;
+        const usableW = width - padX * 2;
+        const usableH = height - padY * 2;
+        const colW = usableW / totalCols;
+
+        // Voortgangsbalk bovenaan voor huidige stapduur
+        let stepProgress = 0;
+        if (state.isPlaying && audioEngine.ctx && state.currentStepDuration > 0) {
+          const remaining = Math.max(0, state.nextStepScheduledAt - audioEngine.ctx.currentTime);
+          stepProgress = Math.max(0, Math.min(1, 1 - remaining / state.currentStepDuration));
+        }
+
+        ctx.fillStyle = '#0f172a';
+        ctx.fillRect(padX, padY, usableW, 5 * dpr);
+        ctx.fillStyle = '#38bdf8';
+        ctx.fillRect(padX, padY, usableW * stepProgress, 5 * dpr);
+
+        const cardTop = padY + 12 * dpr;
+        const cardH = Math.max(44 * dpr, usableH - 22 * dpr);
+
+        for (let gIdx = startGlobalIdx; gIdx <= endGlobalIdx; gIdx++) {
+          const colPos = gIdx - startGlobalIdx;
+          const x = padX + colPos * colW;
+          const cellW = Math.max(4 * dpr, colW - 4 * dpr);
+
+          const isInWindow =
+            gIdx >= wData.stepIndex && gIdx < wData.stepIndex + WINDOW_SIZE;
+          const isLastInWindow = gIdx === wData.stepIndex + WINDOW_SIZE - 1;
+          const primeVal = PRIMES[gIdx];
+          const nextGap = gIdx < PRIMES.length - 1 ? PRIMES[gIdx + 1] - primeVal : null;
+
+          // Achtergrondkaartje
+          ctx.fillStyle = isLastInWindow
+            ? 'rgba(139, 92, 246, 0.18)'
+            : isInWindow
+            ? 'rgba(56, 189, 248, 0.12)'
+            : 'rgba(15, 23, 42, 0.55)';
+          ctx.strokeStyle = isLastInWindow
+            ? 'rgba(167, 139, 250, 0.75)'
+            : isInWindow
+            ? 'rgba(56, 189, 248, 0.45)'
+            : 'rgba(30, 41, 59, 0.7)';
+          ctx.lineWidth = 1 * dpr;
+
+          ctx.beginPath();
+          ctx.roundRect(x, cardTop, cellW, cardH, 6 * dpr);
+          ctx.fill();
+          ctx.stroke();
+
+          // Tekst in kaartje
+          const centerX = x + cellW * 0.5;
+          ctx.textAlign = 'center';
+
+          const primeFontSize = Math.max(10 * dpr, Math.min(14 * dpr, cellW * 0.28));
+          ctx.font = `600 ${primeFontSize}px "JetBrains Mono", monospace`;
+          ctx.fillStyle = isLastInWindow ? '#ddd6fe' : isInWindow ? '#f8fafc' : '#64748b';
+          ctx.fillText(String(primeVal), centerX, cardTop + primeFontSize + 5 * dpr);
+
+          if (isInWindow) {
+            const m = Math.max(1, Math.abs(wData.pLast - primeVal));
+            const partialHz = f0 * m;
+            const subFontSize = Math.max(8 * dpr, Math.min(10.5 * dpr, cellW * 0.2));
+            ctx.font = `500 ${subFontSize}px "JetBrains Mono", monospace`;
+
+            ctx.fillStyle = '#34d399';
+            ctx.fillText(`m=${m}`, centerX, cardTop + primeFontSize + subFontSize + 11 * dpr);
+
+            if (cardH > 64 * dpr) {
+              ctx.fillStyle = '#94a3b8';
+              const hzLabel = partialHz >= 1000 ? `${(partialHz / 1000).toFixed(1)}k` : `${Math.round(partialHz)}`;
+              ctx.fillText(`${hzLabel}Hz`, centerX, cardTop + primeFontSize + subFontSize * 2 + 16 * dpr);
+            }
+          }
+
+          // Gap-indicator tussen priem gIdx en gIdx + 1
+          if (nextGap !== null && colPos < totalCols - 1) {
+            const gapX = x + cellW + 2 * dpr;
+            const gapY = cardTop + cardH - 12 * dpr;
+            ctx.font = `500 ${Math.max(8 * dpr, 9 * dpr)}px "JetBrains Mono", monospace`;
+            ctx.fillStyle = gIdx === wData.stepIndex + WINDOW_SIZE - 1 ? '#fbbf24' : '#475569';
+            ctx.fillText(`+${nextGap}`, gapX, gapY);
+          }
+        }
+      }
+
+      /**
+       * Canvas 2: Oscilloscoop met live piekwaarde en crest factor.
+       */
+      function drawScopeCanvas() {
+        const sized = resizeCanvasToDisplaySize(scopeCanvas);
+        if (!sized) return;
+        const { ctx, width, height, dpr } = sized;
+
+        ctx.clearRect(0, 0, width, height);
+        ctx.fillStyle = '#020617';
+        ctx.fillRect(0, 0, width, height);
+
+        // Nul-lijn en raster
+        ctx.strokeStyle = 'rgba(30, 41, 59, 0.8)';
+        ctx.lineWidth = 1 * dpr;
+        ctx.beginPath();
+        ctx.moveTo(0, height * 0.5);
+        ctx.lineTo(width, height * 0.5);
+        ctx.stroke();
+
+        let peak = 0;
+        let sumSq = 0;
+        const hasAudio = Boolean(state.isPlaying && audioEngine.analyser && audioEngine.timeDomainData);
+
+        if (hasAudio) {
+          audioEngine.analyser.getFloatTimeDomainData(audioEngine.timeDomainData);
+          const buf = audioEngine.timeDomainData;
+          for (let i = 0; i < buf.length; i++) {
+            const absVal = Math.abs(buf[i]);
+            if (absVal > peak) peak = absVal;
+            sumSq += buf[i] * buf[i];
+          }
+
+          ctx.strokeStyle = '#38bdf8';
+          ctx.lineWidth = 1.75 * dpr;
+          ctx.beginPath();
+          const sliceW = width / buf.length;
+          for (let i = 0; i < buf.length; i++) {
+            const x = i * sliceW;
+            const y = height * 0.5 - buf[i] * (height * 0.42);
+            if (i === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
+          }
+          ctx.stroke();
+        } else {
+          // Rustige nul-weergave wanneer gestopt
+          ctx.strokeStyle = '#334155';
+          ctx.lineWidth = 1.5 * dpr;
+          ctx.beginPath();
+          ctx.moveTo(0, height * 0.5);
+          ctx.lineTo(width, height * 0.5);
+          ctx.stroke();
+        }
+
+        const rms = hasAudio
+          ? Math.sqrt(sumSq / Math.max(1, audioEngine.timeDomainData.length))
+          : 0;
+        const crestFactor = rms > 1e-5 ? peak / rms : 1.0;
+
+        document.getElementById('scope-peak').textContent = peak.toFixed(3);
+        document.getElementById('scope-crest').textContent = `${crestFactor.toFixed(2)}×`;
+      }
+
+      /**
+       * Canvas 3: Frequentiespectrum (FFT) met frequentie-aslabels.
+       */
+      function drawFftCanvas() {
+        const sized = resizeCanvasToDisplaySize(fftCanvas);
+        if (!sized) return;
+        const { ctx, width, height, dpr } = sized;
+
+        ctx.clearRect(0, 0, width, height);
+        ctx.fillStyle = '#020617';
+        ctx.fillRect(0, 0, width, height);
+
+        const bottomPad = 18 * dpr;
+        const plotH = Math.max(20 * dpr, height - bottomPad);
+
+        // Horizontale dB-lijnen
+        ctx.strokeStyle = 'rgba(30, 41, 59, 0.75)';
+        ctx.lineWidth = 1 * dpr;
+        for (let r = 1; r <= 3; r++) {
+          const y = (plotH / 4) * r;
+          ctx.beginPath();
+          ctx.moveTo(0, y);
+          ctx.lineTo(width, y);
+          ctx.stroke();
+        }
+
+        if (state.isPlaying && audioEngine.analyser && audioEngine.freqDomainData) {
+          audioEngine.analyser.getByteFrequencyData(audioEngine.freqDomainData);
+          const bins = audioEngine.freqDomainData;
+          // Toon eerste helft van bins voor extra detail in het hoorbare bereik
+          const visibleBins = Math.max(32, Math.floor(bins.length * 0.5));
+          const barW = width / visibleBins;
+
+          const grad = ctx.createLinearGradient(0, plotH, 0, 0);
+          grad.addColorStop(0, '#0284c7');
+          grad.addColorStop(0.6, '#38bdf8');
+          grad.addColorStop(1, '#a78bfa');
+
+          ctx.fillStyle = grad;
+          for (let i = 0; i < visibleBins; i++) {
+            const norm = bins[i] / 255;
+            const barH = norm * (plotH - 4 * dpr);
+            const x = i * barW;
+            const y = plotH - barH;
+            ctx.fillRect(x, y, Math.max(1 * dpr, barW - 0.5 * dpr), barH);
+          }
+        }
+
+        // Frequentie-aslabels onderaan
+        const nyquist = audioEngine.ctx ? (audioEngine.ctx.sampleRate || 48000) * 0.5 : 24000;
+        const maxDisplayedFreq = nyquist * 0.5;
+        ctx.fillStyle = '#64748b';
+        ctx.font = `500 ${9 * dpr}px "JetBrains Mono", monospace`;
+        ctx.textAlign = 'left';
+        ctx.fillText('0 Hz', 6 * dpr, height - 5 * dpr);
+        ctx.textAlign = 'center';
+        ctx.fillText(`${(maxDisplayedFreq / 2000).toFixed(1)} kHz`, width * 0.5, height - 5 * dpr);
+        ctx.textAlign = 'right';
+        ctx.fillText(`${(maxDisplayedFreq / 1000).toFixed(1)} kHz`, width - 6 * dpr, height - 5 * dpr);
+      }
+
+      function animationLoop() {
+        drawTimelineCanvas();
+        drawScopeCanvas();
+        drawFftCanvas();
+        requestAnimationFrame(animationLoop);
+      }
+
+      window.addEventListener('resize', () => {
+        drawTimelineCanvas();
+        drawScopeCanvas();
+        drawFftCanvas();
+      });
+
+      // =========================================================================
+      // 10. INITIALISATIE
+      // =========================================================================
+      window.addEventListener('DOMContentLoaded', () => {
+        updateAllUI();
+        requestAnimationFrame(animationLoop);
+      });
+    })();
+  </script>
+
+</body></html>
